@@ -1,0 +1,6 @@
+---
+# tasks file for roles/provisioning
+- name: Instalando o Java 11
+  apt: 
+    state: latest
+    name: openjdk-11-jdk

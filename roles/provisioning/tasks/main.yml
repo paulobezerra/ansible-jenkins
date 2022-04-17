@@ -1,0 +1,41 @@
+---
+# tasks file for roles/provisioning
+# - name: Atualizando repositório e pacotes do sistema
+#   apt:
+#     update_cache: yes
+#     upgrade: dist
+
+# - name: Configurando timezone para America/Sao_Paulo
+#   timezone:
+#     name: America/Sao_Paulo
+
+# - name: Set hostname
+#   hostname:
+#     name: "{{ srv_hostname }}"
+
+# - name: Instalando pacotes essenciais
+#   apt: 
+#     state: latest
+#     pkg:
+#       - python3-apt
+#       - aptitude
+#       - acl
+#       - ntp
+#       - ntpdate
+#       - git
+#       - curl
+#       - sudo
+#       - libaio1
+#       - zip
+#       - unrar-free
+
+- name: Criar o diretório .ssh com root
+  file: path=/root/.ssh state=directory
+
+- name: Enviar chave SSH do BitBucket
+  copy: 
+    src: bitbucket 
+    dest: /root/.ssh/bitbucket
+
+- name: Setando permições corretas a chave SSH
+  file: dest=/root/.ssh/bitbucket mode=0600

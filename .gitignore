@@ -1,0 +1,4 @@
+hosts
+devops.pem
+roles/provisioning/files/bitbucket
+roles/provisioning/files/bitbucket.pub

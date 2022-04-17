@@ -1,0 +1,17 @@
+---
+- hosts: webserver
+  become: yes
+  gather_facts: yes
+  
+  vars:
+    # Hostname do servidor
+    srv_hostname: jenkins
+    # Adicione o IP do seu servidor ou o domínio do site (caso já esteja publicado)
+    # Após o provisionamento você poderá acessar o endereço para acessar a página web
+    domain_site: <DNS>
+
+  roles:
+    # - provisioning
+    # - java
+    # - jenkins
+    - php
