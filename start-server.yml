@@ -8,10 +8,10 @@
     srv_hostname: jenkins
     # Adicione o IP do seu servidor ou o domínio do site (caso já esteja publicado)
     # Após o provisionamento você poderá acessar o endereço para acessar a página web
-    domain_site: <DNS>
+    domain_site:  ec2-52-87-186-247.compute-1.amazonaws.com 
 
   roles:
-    # - provisioning
-    # - java
-    # - jenkins
+    - provisioning
+    - java
+    - jenkins
     - php
